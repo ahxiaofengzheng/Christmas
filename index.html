@@ -1,0 +1,767 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>圣诞节快乐！</title>
+<link type="text/css" href="all.min.css" rel="stylesheet" />
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<style type="text/css">
+    #snowbanner {
+        position: fixed;top: 0;left: 0;z-index:1;
+        width: 100%;height: 100vh;overflow: hidden;pointer-events: none;
+        /*background-image: url("../img/mountains.svg");*/background-size: cover;background-position: center bottom;background-repeat: repeat no-repeat;
+    }
+    #snowbanner .snow {
+        background-image: url(image/snow.png);
+        background-repeat: repeat;width: 100%;height: 100%;
+        position: absolute;top: 0;left: 0;
+        -webkit-animation-timing-function: linear;
+        -ms-animation-timing-function: linear;
+        animation-timing-function: linear;
+        transition: opacity 3s;
+    }
+    #snowbanner .snow.snow-1 {-webkit-animation-name: animateone;-ms-animation-name: animateone;animation-name: animateone;background-size: 500px 500px;}
+    #snowbanner .snow.snow-2 {-webkit-animation-name: animatetwo;-ms-animation-name: animatetwo;animation-name: animatetwo;background-size: 300px 300px;}
+    @-webkit-keyframes animateone {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 500px 500px;}
+    }
+    @-ms-keyframes animateone {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 500px 500px;}
+    }
+    @keyframes animateone {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 500px 500px;}
+    }
+    @-webkit-keyframes animatetwo {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 300px 900px;}
+    }
+    @-ms-keyframes animatetwo {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 300px 900px;}
+    }
+    @keyframes animatetwo {
+        0% {background-position: 0px 0px;}
+        100% {background-position: 300px 900px;}
+    }
+    .snow-speed-wrapper {position: fixed;width: 100%;bottom: 20px;z-index:999;}
+    .snow-speed-wrapper .snow-speed-range {width: calc(100% - 40px);margin: auto;max-width: 500px;padding: 10px 30px;background: rgba(0, 0, 0, 0.3);transition: background 0.5s ease;border-radius: 5px;box-sizing: border-box;}
+    .snow-speed-wrapper .snow-speed-range:hover {background: rgba(0, 0, 0, 0.5);}
+    #range-slider {-webkit-appearance: none;width: 100%;height: 10px;border-radius: 5px;background: #d7dcdf;outline: none;padding: 0;margin: 0;cursor: pointer;}
+    #range-slider::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 20px;height: 20px;border-radius: 100%;background-color: #fff;}
+</style>
+<script>
+    let speedSlider = document.querySelector("#range-slider");
+    let speedValue = speedSlider.value;
+    let snow = document.querySelectorAll("#snowbanner .snow");
+    let snowSwitch = true;
+    speedSlider.addEventListener("input", function() {
+        speedValue = speedSlider.value;
+        setSeconds();
+    });
+
+    function setSeconds() {
+        let seconds = (100 - speedValue) * 0.2;
+        if (seconds < 0.5) {
+            seconds = 0.5;
+        }
+        seconds >= 20 ? (snowSwitch = false) : (snowSwitch = true);
+        snow.forEach(element => {
+            element.style.WebkitAnimationDuration = `${seconds}s`;
+            element.style.animationDuration = `${seconds}s`;
+
+            if (snowSwitch) {
+                element.style.WebkitAnimationIterationCount = "infinite";
+                element.style.animationIterationCount = "infinite";
+                element.style.opacity = "1";
+            } else {
+                element.style.WebkitAnimationIterationCount = "1";
+                element.style.animationIterationCount = "1";
+                element.style.opacity = "0";
+            }
+        });
+    }
+    setSeconds();
+</script>
+</head>
+<body>
+    
+    <section id="snowbanner" style="position:fixed;">
+        <div class="snow snow-1" style="animation-duration: 10s; animation-iteration-count: infinite; opacity: 1;"></div>
+        <div class="snow snow-2" style="animation-duration: 10s; animation-iteration-count: infinite; opacity: 1;"></div>
+    </section>
+    <div class="snow-speed-wrapper" style="display: none;">
+        <div class="snow-speed-range">
+            <input id="range-slider" type="range" value="10" />
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="tree-container">
+          <div class="star"></div>
+          <div class="spiral-container">
+            <ul class="spiral one">
+              <li class="light-wrapper light-wrapper-1">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-2">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-3">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-4">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-5">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-6">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-7">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-8">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-9">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-10">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-11">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-12">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-13">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-14">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-15">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-16">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-17">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-18">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-19">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-20">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-21">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-22">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-23">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-24">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-25">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-26">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-27">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-28">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-29">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-30">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-31">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-32">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-33">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-34">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-35">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-36">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-37">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-38">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-39">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-40">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-41">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-42">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-43">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+            </ul>
+            <ul class="spiral two">
+              <li class="light-wrapper light-wrapper-1">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-2">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-3">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-4">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-5">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-6">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-7">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-8">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-9">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-10">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-11">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-12">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-13">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-14">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-15">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-16">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-17">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-18">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-19">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-20">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-21">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-22">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-23">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-24">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-25">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-26">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-27">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-28">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-29">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-30">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-31">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-32">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-33">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-34">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-35">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-36">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-37">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-38">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-39">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-40">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-41">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-42">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-43">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+            </ul>
+            <ul class="spiral three">
+              <li class="light-wrapper light-wrapper-1">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-2">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-3">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-4">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-5">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-6">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-7">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-8">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-9">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-10">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-11">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-12">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-13">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-14">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-15">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-16">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-17">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-18">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-19">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-20">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-21">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-22">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-23">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-24">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-25">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-26">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-27">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-28">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-29">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-30">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-31">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-32">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-33">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-34">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-35">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-36">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-37">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-38">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-39">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-40">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-41">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-42">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+              <li class="light-wrapper light-wrapper-43">
+                <div class="stabilise">
+                  <div class="light"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-container">
+          <h2 class="happy">Merry Christmas</h2>
+        </div>
+      </div>
+    <audio id="bgmMusic" src="bgm.mp3" autoplay="autoplay" loop preload="auto" type="audio/mp3"></audio>
+    <!-- <script src="jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="all.min.js" ></script>
+    <script src="love.min.js" ></script>
+  <div class="mPower"><span id="on" title="点击暂停" style=""></span><span id="off" title="点击播放"  style=""></span></div> -->
+</body>
+</html>
